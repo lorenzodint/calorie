@@ -120,6 +120,7 @@ async def mostra():
                             return st.error(analisi.errore)
                         session.risposta = analisi.risultato
                         session.page = Pagine.ANALISI.value
+                        session.camera_on = False
                         st.rerun()
 
 
