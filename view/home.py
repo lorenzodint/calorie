@@ -109,6 +109,21 @@ async def mostra():
 
             if picture:
                 st.image(picture)
+                if st.button("Analizza questo cibo"):
+                    with st.spinner("Analisi dell'immagine in corso...", show_time=True):
+                        img_base64 = await func.encoded_image(picture)
+                        if not img_base64.stato:
+                            return st.error(img_base64.errore)
+
+                        analisi = await ai.anlisi_ai(img_base64.risultato)
+                        if not analisi.stato:
+                            return st.error(analisi.errore)
+                        session.risposta = analisi.risultato
+                        session.page = Pagine.ANALISI.value
+                        st.rerun()
+
+
+
 
         return Result()
     except Exception as e:
