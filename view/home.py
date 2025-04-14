@@ -101,10 +101,7 @@ async def mostra():
                 session.camera_on = not session.camera_on
                 st.rerun()
 
-            if session.camera_on:
-                if st.button("🔄 Passa a: Fotocamera " + ("Posteriore" if session.camera_front else "Frontale")):
-                    session.camera_front = not session.camera_front
-                    st.rerun()
+            
 
             picture = st.camera_input("Scatta foto", 
                                     disabled=not session.camera_on,
