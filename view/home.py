@@ -14,7 +14,7 @@ async def mostra():
         
         
 
-        st.header("Anaizza cibo e calorie")
+        st.header("Analizza cibo e calorie")
         st.write(
             "Carica una foto di un cibo per analizzarlo e ottenere informazioni sulle calorie.")
 
