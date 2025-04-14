@@ -10,12 +10,7 @@ async def app():
         session = st.session_state
         st.set_page_config(layout="centered")
 
-        hide_github_icon = """
-#GithubIcon {
-  visibility: hidden;
-}
-"""
-        st.markdown(hide_github_icon, unsafe_allow_html=True)
+      
 
         configurazione_session = await config_session()
         if not configurazione_session.stato:
