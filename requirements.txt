@@ -1,0 +1,8 @@
+streamlit
+openai
+pillow
+python-dotenv
+asyncio
+pydantic
+streamlit-extras
+streamlit-webrtc
